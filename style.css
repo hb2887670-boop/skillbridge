@@ -1,0 +1,279 @@
+/* =========================================
+   SKILLBRIDGE ULTIMATE ROBUST STYLESHEET
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-light: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-dark: #0f172a;
+    --text-muted: #475569;
+    --border: #cbd5e1;
+    --input-bg: #ffffff;
+}
+
+body.dark-mode {
+    --bg-light: #0f172a;
+    --card-bg: #1e293b;
+    --text-dark: #f8fafc;
+    --text-muted: #cbd5e1;
+    --border: #475569;
+    --input-bg: #0f172a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- NAVIGATION BAR --- */
+nav {
+    background-color: #0f172a;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #334155;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+}
+
+nav div a, nav div button {
+    color: #e2e8f0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+nav div a:hover, nav div button:hover {
+    color: #60a5fa;
+}
+
+/* --- MAIN CONTAINER (FIXED TO CENTER) --- */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+    width: 100%;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+p, span, label {
+    color: var(--text-muted);
+}
+
+/* --- GRIDS & CARDS --- */
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card, .form-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* --- STATS --- */
+.stat {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 10px 0;
+}
+
+/* --- BUTTONS --- */
+.btn, a.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #ffffff !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover, a.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* --- BADGES --- */
+.badge {
+    display: inline-block;
+    background-color: #dbeafe;
+    color: #1e40af;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+body.dark-mode .badge {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+}
+
+/* --- FORMS & INPUTS --- */
+.form-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    margin-top: 15px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+    width: 100%;
+    transition: border-color 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+input:disabled {
+    background-color: var(--border);
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+    background-color: var(--card-bg);
+}
+/* ================= TEXT FIT FIX ================= */
+
+.card,
+.dashboard-card,
+.stat-card,
+.internship-card,
+.profile-card,
+.application-card,
+.feature-card,
+.auth-card,
+.login-card,
+.register-card,
+.company-header,
+.light,
+.light-section,
+.white-section {
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+/* Headings box ke andar rahenge */
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.dashboard-card h1,
+.dashboard-card h2,
+.dashboard-card h3,
+.dashboard-card h4,
+.internship-card h1,
+.internship-card h2,
+.internship-card h3,
+.internship-card h4,
+.profile-card h1,
+.profile-card h2,
+.profile-card h3,
+.profile-card h4 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* Long email / username / website bhi box se bahar nahi jayega */
+.card p,
+.card span,
+.profile-card p,
+.profile-card span,
+.application-card p,
+.application-card span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* Buttons ke letters bhi box ke andar */
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+    white-space: normal;
+    max-width: 100%;
+}
